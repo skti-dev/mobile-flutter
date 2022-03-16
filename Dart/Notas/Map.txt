@@ -1,0 +1,36 @@
+// Map
+void main() {
+  Carro c1 = Carro("Fusca");
+  Carro c2 = Carro("Brasilia");
+  Carro c3 = Carro("Chevete");
+  
+  // map é um par de chave e valor, igual o json
+  final carros = { "1":c1, "2":c2 };
+  carros["3"] = c3;
+  
+  print("Lista: $carros, length: ${carros.length}");
+  
+  // looping pela "key" do map
+  for(String id in carros.keys) {
+    
+    final carro = carros[id];
+    
+    print(" >> ${carro?.nome}"); // null safety: caso a var esteja null o print não é exibido
+  }
+  
+  // looping pelo "values" do map
+  for(Carro carro in carros.values) {
+       
+    print(" >> ${carro.nome}");
+  }
+}
+ 
+class Carro {
+  String nome;
+  
+  Carro(this.nome);
+  
+  String toString() {
+    return nome;
+  }
+}

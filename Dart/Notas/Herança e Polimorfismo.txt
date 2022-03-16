@@ -1,0 +1,48 @@
+// Herança e Polimorfismo
+void main() {
+  Carro c1 = Carro("Fusca", 1982);
+  Carro c2 = Carro("Brasilia", 1983);
+  Carro c3 = Carro("Chevete", 1990);
+  
+  final carros = [c1, c2, c3];
+//   carros.add(c1);
+//   carros.add(c2);
+//   carros.add(c3);
+  
+  print("Lista: $carros, length: ${carros.length}");
+  
+  for(Carro c in carros) {
+    //print(" Carro: ${c.nome} - Ano: ${c.ano}");
+    print(c.dadosCarro());
+  }
+}
+ 
+class Veiculo {
+  String nome;
+  
+  Veiculo(this.nome);
+  
+  String dadosCarro(){
+    return nome;
+  }
+  
+}
+ 
+class Carro extends Veiculo {
+ 
+  int ano;
+  
+  Carro(nome, this.ano):super(nome);
+  
+  // usado para imprimir todos os objetos da lista
+  String toString() {
+    return "$nome - $ano";
+  }  
+  
+  @override
+  String dadosCarro(){
+    //return "${super.dadosCarro()} Carrão: $nome e Ano: $ano";
+    return "Carrão: $nome e Ano: $ano";
+  }
+}
+
