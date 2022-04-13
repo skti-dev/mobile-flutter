@@ -20,6 +20,10 @@ class _HomeState extends State<Home> {
       return;
     }
 
+    double euroDolar = 1.0825;
+    double euroReal = 5.06;
+    double dolarReal = 4.67;
+
     double valor = double.parse(_controllerValor.text);
     double resultado = 0;
 
@@ -27,25 +31,25 @@ class _HomeState extends State<Home> {
       resultado = valor;
     } else if (_dropdownDeController == 'euro' &&
         _dropdownParaControler == 'dolar') {
-      resultado = valor * 1.0825;
+      resultado = valor * euroDolar;
     } else if (_dropdownDeController == 'euro' &&
         _dropdownParaControler == 'real') {
-      resultado = valor * 5.06;
+      resultado = valor * euroReal;
     } else if (_dropdownDeController == 'dolar' &&
         _dropdownParaControler == 'euro') {
-      resultado = valor / 1.0825;
+      resultado = valor / euroDolar;
     } else if (_dropdownDeController == 'dolar' &&
         _dropdownParaControler == 'dolar') {
       resultado = valor;
     } else if (_dropdownDeController == 'dolar' &&
         _dropdownParaControler == 'real') {
-      resultado = valor * 4.67;
+      resultado = valor * dolarReal;
     } else if (_dropdownDeController == 'real' &&
         _dropdownParaControler == 'euro') {
-      resultado = valor / 5.06;
+      resultado = valor / euroReal;
     } else if (_dropdownDeController == 'real' &&
         _dropdownParaControler == 'dolar') {
-      resultado = valor / 4.67;
+      resultado = valor / dolarReal;
     } else if (_dropdownDeController == 'real' &&
         _dropdownParaControler == 'real') {
       resultado = valor;
